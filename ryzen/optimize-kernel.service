@@ -1,0 +1,11 @@
+[Unit]
+Description=Advanced Kernel and Network Optimization for Ryzen
+After=multi-user.target network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/optimize-kernel.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

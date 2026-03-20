@@ -1,0 +1,11 @@
+[Unit]
+Description=Force AMD Ryzen CPU governor and EPP to performance
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/ryzen-performance.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
