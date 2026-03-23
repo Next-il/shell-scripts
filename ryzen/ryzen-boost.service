@@ -1,0 +1,16 @@
+[Unit]
+Description=Enable AMD Ryzen Precision Boost
+# Ensures the service runs after the system is ready for normal tasks
+After=multi-user.target
+
+[Service]
+# 'oneshot' is used because the script runs once and then finishes
+Type=oneshot
+# Path matches your curl destination
+ExecStart=/usr/local/sbin/ryzen-boost.sh enable
+# Keeps the service marked as 'active' so you know it ran successfully
+RemainAfterExit=yes
+
+[Install]
+# This section is CRITICAL. It allows 'systemctl enable' to work.
+WantedBy=multi-user.target
